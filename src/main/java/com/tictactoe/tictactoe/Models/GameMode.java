@@ -8,11 +8,7 @@ package com.tictactoe.tictactoe.Models;
  *
  * @author ashra
  */
-public class Player {
-	public String username;
-	public Moves move;
-        public Player(String _username,Moves _move){
-            username=_username;
-            move = _move;
-        }
+public enum GameMode{
+    AI,
+    NETWORK
 }
