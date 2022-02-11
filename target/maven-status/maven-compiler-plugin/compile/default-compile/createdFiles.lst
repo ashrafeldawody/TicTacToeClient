@@ -6,5 +6,4 @@ com\tictactoe\tictactoe\RegisterWindowController.class
 com\tictactoe\tictactoe\Models\AIPlayer.class
 com\tictactoe\tictactoe\Models\Player.class
 com\tictactoe\tictactoe\App.class
-module-info.class
 com\tictactoe\tictactoe\Models\DifficultyLevel.class

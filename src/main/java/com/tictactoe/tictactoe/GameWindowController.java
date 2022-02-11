@@ -68,6 +68,7 @@ public class GameWindowController implements Initializable {
     }
 
     public void selectField(MouseEvent event) {
+        if(GameOver) return;
         Label label = (Label) event.getSource();
         String labelText = label.getId();
         switch (labelText)
@@ -112,6 +113,7 @@ public class GameWindowController implements Initializable {
         updateBoard();
         if(g.checkWin() != Moves.EMPTY){
             GameOver = true;
+            System.out.println("lol");
         }
     }
 

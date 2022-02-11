@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<StackPane prefWidth="231.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.tictactoe.tictactoe.RegisterWindowController">
-  <children>
-    <StackPane>
-      <children>
-        <VBox spacing="10.0">
-          <children>
-            <GridPane>
-              <children>
-                <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <TextField fx:id="user" promptText="Use &quot;open&quot; to login" text="open" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                <TextField fx:id="password" promptText="Use &quot;sesame&quot; to login" text="sesame" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="109.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="189.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <StackPane prefHeight="-1.0" prefWidth="-1.0">
-              <children>
-                <Button fx:id="loginButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Login" StackPane.alignment="CENTER_RIGHT" />
-              </children>
-            </StackPane>
-          </children>
-        </VBox>
-      </children>
-    </StackPane>
-  </children>
-  <padding>
-    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-  </padding>
-</StackPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tictactoe.tictactoe.RegisterWindowController">
+   <left>
+      <AnchorPane minWidth="-Infinity" prefWidth="350.0" style="-fx-background-color: #345f94; -fx-background-radius: 0px 10px 10px 0px;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="70.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Tick Tack Toe Game">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView fill="WHITE" glyphName="GAMEPAD" layoutX="138.0" layoutY="228.0" size="90" text="" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="500.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField layoutX="101.0" layoutY="197.0" promptText="UserName" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.leftAnchor="101.0" />
+            <PasswordField layoutX="102.0" layoutY="259.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" />
+            <FontAwesomeIconView fill="#345f94" glyphName="USER" layoutX="76.0" layoutY="222.0" size="20" />
+            <FontAwesomeIconView fill="#345f94" glyphName="KEY" layoutX="74.0" layoutY="283.0" size="20" />
+            <Button layoutX="114.0" layoutY="336.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #345f94;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="#345f94" glyphName="USERS" layoutX="158.0" layoutY="120.0" size="35" />
+            <Text fill="#345f94" layoutX="130.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Button layoutX="284.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: transparent;" />
+            <FontAwesomeIconView fill="#345f94" glyphName="CLOSE" layoutX="307.0" layoutY="38.0" size="18" text="" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
