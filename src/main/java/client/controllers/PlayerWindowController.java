@@ -1,6 +1,5 @@
-package com.tictactoe.controllers;
+package client.controllers;
 
-import com.tictactoe.Models.Server;
 import javafx.fxml.Initializable;
 
 import java.net.URL;

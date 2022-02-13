@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package com.tictactoe.controllers;
+package client.controllers;
 
-import com.tictactoe.Models.Game;
-import com.tictactoe.Models.Player;
+import client.models.Game;
+import client.models.Player;
 
 import java.net.URL;
 import java.util.ResourceBundle;
