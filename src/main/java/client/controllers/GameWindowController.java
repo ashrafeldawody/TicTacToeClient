@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package com.tictactoe.tictactoe;
+package com.tictactoe.controllers;
 
-import com.tictactoe.tictactoe.Models.Game;
-import com.tictactoe.tictactoe.Models.Moves;
-import com.tictactoe.tictactoe.Models.Player;
+import com.tictactoe.Models.Game;
+import com.tictactoe.Models.Player;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -46,15 +46,14 @@ public class GameWindowController implements Initializable {
     private Label field9;
     @FXML
     private Line WinLine;
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        p1 = new Player("Essam",Moves.X);
-        g = new Game(p1);
-        
-        
+        //p1 = new Player("Essam",Moves.X);
+        //g = new Game(p1);
+
+
     }
 
-    public void updateBoard() {
+    /*public void updateBoard() {
         if(g.board[0][0] != Moves.EMPTY) field1.setText(g.board[0][0].toString());
         if(g.board[0][1] != Moves.EMPTY) field2.setText(g.board[0][1].toString());
         if(g.board[0][2] != Moves.EMPTY) field3.setText(g.board[0][2].toString());
@@ -65,7 +64,7 @@ public class GameWindowController implements Initializable {
         if(g.board[2][1] != Moves.EMPTY) field8.setText(g.board[2][1].toString());
         if(g.board[2][2] != Moves.EMPTY) field9.setText(g.board[2][2].toString());
 
-    }
+    }*/
 
     public void selectField(MouseEvent event) {
         if(GameOver) return;
@@ -74,47 +73,36 @@ public class GameWindowController implements Initializable {
         switch (labelText)
         {
             case "field1":
-                g.play(0, 0);
+
                 break;
             case "field2":
-                g.play(0, 1);
+
                 break;
             case "field3":
-                g.play(0, 2);
 
                 break;
             case "field4":
-                g.play(1, 0);
-
+                
                 break;
             case "field5":
-                g.play(1, 1);
-
+                
                 break;
             case "field6":
-                g.play(1, 2);
-
+                
                 break;
             case "field7":
-                g.play(2, 0);
-
+                
                 break;
             case "field8":
-                g.play(2, 1);
 
                 break;
             case "field9":
-                g.play(2, 2);
 
                 break;
             default:
                 throw new AssertionError();
         }
-        updateBoard();
-        if(g.checkWin() != Moves.EMPTY){
-            GameOver = true;
-            System.out.println("lol");
-        }
+        //updateBoard();
     }
 
 }
