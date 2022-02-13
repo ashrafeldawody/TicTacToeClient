@@ -94,7 +94,7 @@
                   <Insets top="-10.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="163.0" styleClass="btn-login" text="Log In" textFill="WHITE" VBox.vgrow="ALWAYS">
+            <Button fx:id="loginBtn" defaultButton="true" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="163.0" styleClass="btn-login" text="Log In" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Tahoma" size="18.0" />
                </font>
@@ -110,7 +110,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="31.0"  onAction="#switchRegister" prefWidth="172.0" styleClass="btn-signin" text="New User ? Sign Up " textFill="#345f94">
+            <Button mnemonicParsing="false" onAction="#switchRegister" prefHeight="31.0" prefWidth="172.0" styleClass="btn-signin" text="New User ? Sign Up " textFill="#345f94">
                <font>
                   <Font size="15.0" />
                </font>

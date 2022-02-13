@@ -9,8 +9,11 @@ import client.models.Player;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Line;
@@ -27,30 +30,28 @@ public class GameWindowController implements Initializable {
     private Boolean GameOver = false;
     
     @FXML
-    private Label field1;
+    private Button field1;
     @FXML
-    private Label field2;
+    private Button field2;
     @FXML
-    private Label field3;
+    private Button field3;
     @FXML
-    private Label field4;
+    private Button field4;
     @FXML
-    private Label field5;
+    private Button field5;
     @FXML
-    private Label field6;
+    private Button field6;
     @FXML
-    private Label field7;
+    private Button field7;
     @FXML
-    private Label field8;
+    private Button field8;
     @FXML
-    private Label field9;
+    private Button field9;
     @FXML
     private Line WinLine;
     public void initialize(URL url, ResourceBundle rb) {
         //p1 = new Player("Essam",Moves.X);
         //g = new Game(p1);
-
-
     }
 
     /*public void updateBoard() {
@@ -66,38 +67,38 @@ public class GameWindowController implements Initializable {
 
     }*/
 
-    public void selectField(MouseEvent event) {
+    public void selectField(ActionEvent event) {
         if(GameOver) return;
-        Label label = (Label) event.getSource();
-        String labelText = label.getId();
-        switch (labelText)
+        Button btn = (Button) event.getSource();
+        String btnText = btn.getId();
+        switch (btnText)
         {
             case "field1":
-
+                field1.setText("O");
                 break;
             case "field2":
-
+                field2.setText("O");
                 break;
             case "field3":
-
+                field3.setText("O");
                 break;
             case "field4":
-                
+                field4.setText("O");
                 break;
             case "field5":
-                
+                field5.setText("O");
                 break;
             case "field6":
-                
+                field6.setText("O");
                 break;
             case "field7":
-                
+                field7.setText("O");
                 break;
             case "field8":
-
+                field8.setText("O");
                 break;
             case "field9":
-
+                field9.setText("O");
                 break;
             default:
                 throw new AssertionError();
