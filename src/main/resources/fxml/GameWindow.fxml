@@ -18,7 +18,7 @@
     <children>
       <BorderPane layoutX="1.0" layoutY="10.0" prefHeight="450.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-              <GridPane alignment="CENTER" gridLinesVisible="true" hgap="10.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="300.0" styleClass="gameGrid" stylesheets="@style.css" vgap="10.0" BorderPane.alignment="CENTER">
+              <GridPane alignment="CENTER" hgap="20.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="300.0" styleClass="gameGrid" stylesheets="@style.css" vgap="20.0" BorderPane.alignment="CENTER">
                   <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -43,7 +43,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                      </font>
                   </Button>
-                  <Button fx:id="field3" mnemonicParsing="false" onAction="#selectField" text="X" textFill="#373799" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Button fx:id="field3" mnemonicParsing="false" onAction="#selectField" text="X" textFill="#373799" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                      </font>
                   </Button>
-                  <Button fx:id="field6" mnemonicParsing="false" onAction="#selectField" text="X" textFill="#373799" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="field6" mnemonicParsing="false" onAction="#selectField" text="X" textFill="#373799" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                      </font>

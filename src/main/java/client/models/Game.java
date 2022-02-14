@@ -4,10 +4,16 @@
  */
 package client.models;
 
+import java.util.Date;
+
 /**
  *
- * @author ashra
+ * @author ashraf
  */
 public class Game {
-    
+    private int id;
+    private Player player1;
+    private Player player2;
+    private Date date;
+
 }

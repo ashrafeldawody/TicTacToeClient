@@ -4,7 +4,10 @@
  */
 package client.models;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -14,17 +17,32 @@ public class Player {
     public String username;
     public int points = 0;
     public Boolean online;
-    public Player(String _username,int _points){
+    public String getUsername() {
+        return username;
+    }
+    public int getPoints(){
+        return points;
+    }
+
+    public Boolean getOnline() {
+        return online;
+    }
+
+    public Player(String _username, int _points){
             username =_username;
             points = _points;
     }
-    public static String login(String username,String password){
-        JSONObject request = new JSONObject();
-        request.put("action", "login");
-        request.put("username", username);
-        request.put("password", password);
-        Server.sendRequest(request.toString());
-        String str = Server.waitForResponse();
-        return str;
+    public static void getAll(){
+        Server.sendRequest(JSONRequests.onlinePlayers().toString());
+    }
+
+    public static void login(String username,String password){
+        Server.sendRequest(JSONRequests.login(username,password).toString());
+    }
+    public static void sendGameRequest(String _username){
+        Server.sendRequest(JSONRequests.playRequest(_username).toString());
+    }
+    public static void acceptGameRequest(){
+        Server.sendRequest(JSONRequests.playAccept(Server.player.username).toString());
     }
 }

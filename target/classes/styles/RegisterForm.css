@@ -17,7 +17,9 @@
      -fx-border-radius:10px;
 }
 .btn-login:pressed{
-    -fx-rotate:12;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
     -fx-text-fill:#fff;
 }
 

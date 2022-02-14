@@ -20,17 +20,18 @@ import javafx.scene.control.Alert;
  * @author ashra
  */
 public class Helpers {
-    public static void showDialog(Alert.AlertType type,String title,String header,String content){
-         Platform.runLater(()->{
+    public static void showDialog(Alert.AlertType type,String title,String header,String content,Boolean exit){
+        Platform.runLater(()->{
             Alert a = new Alert(type);
             a.setTitle(title);
             a.setHeaderText(header);
             a.setResizable(true);
             a.setContentText(content);
             a.showAndWait();
-         });
+            if(exit) Platform.exit();
+        });
     }
-        public static void displayTray(String title,String text) {        
+        public static void displayTray(String title,String text) {
         SystemTray tray = SystemTray.getSystemTray();
         Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
         TrayIcon trayIcon = new TrayIcon(image, "Client Notification");
