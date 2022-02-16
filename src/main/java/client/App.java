@@ -1,6 +1,10 @@
 package client;
 
+import client.models.Player;
+import client.models.ResponseHandler;
+import client.models.Server;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +18,6 @@ import java.io.IOException;
 
 
 public class App extends Application {
-
     private static Scene scene;
     private double xOffset,yOffset;
     @Override
@@ -36,7 +39,10 @@ public class App extends Application {
                 stage.setY(event.getScreenY() + yOffset);
             }
         });
-
+        stage.setOnHidden((e)->{
+            Player.logout();
+            System.exit(0);
+        });
 
         stage.setScene(scene);
         stage.show();

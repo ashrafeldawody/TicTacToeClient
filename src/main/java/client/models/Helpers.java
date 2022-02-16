@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
+import org.pomo.toasterfx.ToastBarToasterService;
+import org.pomo.toasterfx.model.impl.ToastTypes;
 
 /**
  *
@@ -31,21 +33,9 @@ public class Helpers {
             if(exit) Platform.exit();
         });
     }
-        public static void displayTray(String title,String text) {
-        SystemTray tray = SystemTray.getSystemTray();
-        Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
-        TrayIcon trayIcon = new TrayIcon(image, "Client Notification");
-        //Let the system resize the image if needed
-        trayIcon.setImageAutoSize(true);
-        //Set tooltip text for the tray icon
-        trayIcon.setToolTip("Client Notification");
-        try
-        {
-            tray.add(trayIcon);
-        } catch (AWTException ex)
-        {
-            Logger.getLogger(Helpers.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        trayIcon.displayMessage(title, text, MessageType.INFO);
+        public static void displayTray(String title,String text,ToastTypes type) {
+            ToastBarToasterService service = new ToastBarToasterService();
+            service.initialize();
+            service.bomb(title,text, type);
     }
 }

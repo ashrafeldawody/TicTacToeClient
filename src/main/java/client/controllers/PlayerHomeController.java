@@ -1,6 +1,7 @@
 package client.controllers;
 
 import client.App;
+import client.models.Player;
 import client.models.Server;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -21,8 +22,8 @@ public class PlayerHomeController  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usernamefield.setText(Server.player.username);
-        scorefield.setText(String.valueOf(Server.player.points));
+        usernamefield.setText(Player.player.username);
+        scorefield.setText(String.valueOf(Player.player.points));
     }
     @FXML
     private void mouseEntered(MouseEvent ae){
@@ -34,6 +35,7 @@ public class PlayerHomeController  implements Initializable {
     }
     @FXML
     private void multiPlay(ActionEvent ae) throws IOException {
+        Player.getOnlineList();
         App.setRoot("PlayersList");
     }
     @FXML
@@ -42,6 +44,7 @@ public class PlayerHomeController  implements Initializable {
     }
     @FXML
     private void exit(ActionEvent ae){
-        Platform.exit();
+        Player.logout();
+        System.exit(0);
     }
 }

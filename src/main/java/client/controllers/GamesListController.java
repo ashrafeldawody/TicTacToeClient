@@ -4,6 +4,7 @@ import client.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +22,10 @@ public class GamesListController implements Initializable {
     @FXML
     private void replay(ActionEvent ae){
 
+    }
+    @FXML
+    private void mouseEntered(MouseEvent ae){
+        new SoundPlayer(SoundPlayer.SOUND.TICK).play();
     }
 
 }

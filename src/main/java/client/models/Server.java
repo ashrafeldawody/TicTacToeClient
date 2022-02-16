@@ -19,7 +19,6 @@ public abstract class Server {
 
     private static BufferedReader inputStream;
     private static PrintStream outputStream;
-    public static Player player = null;
     private static Socket socket;
 
     public static void connect(String ipAddress, int portNumber) {

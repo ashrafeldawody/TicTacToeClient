@@ -57,7 +57,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" onAction="#singlePlay" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="237.0" style="-fx-border-color: #fff; -fx-background-color: #ffffff00; -fx-border-width: 2; -fx-border-radius: 10;" styleClass="btn-play" text="Singe Player" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#singlePlay" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="237.0" styleClass="btn-play" text="Singe Player" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -72,7 +72,7 @@
                         <Insets bottom="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#multiPlay" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" style="-fx-border-color: #fff; -fx-background-color: #ffffff00; -fx-border-width: 2; -fx-border-radius: 10;" styleClass="btn-play" text="Mutliplayer" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#multiPlay" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" styleClass="btn-play" text="Mutliplayer" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -87,7 +87,7 @@
                         <Insets bottom="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#gameHistory" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" style="-fx-border-color: #fff; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-color: #ffffff00;" styleClass="btn-play" text="Game History" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#gameHistory" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" styleClass="btn-play" text="Game History" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -102,7 +102,7 @@
                         <Insets bottom="15.0" top="15.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#exit" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" style="-fx-border-color: #fff; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-color: #ffffff00;" styleClass="btn-play" text="Exit" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#exit" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="238.0" styleClass="btn-play" text="Exit" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

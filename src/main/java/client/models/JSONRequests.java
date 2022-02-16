@@ -21,11 +21,10 @@ public class JSONRequests {
         request.put("action", "get-online-players");
         return request;
     }
-    public static JSONObject playRequest(String username){
+    public static JSONObject playRequest(String opponent){
         JSONObject request = new JSONObject();
         request.put("action", "play-request");
-        request.put("save", "true");
-        request.put("username", "play-request");
+        request.put("opponent", opponent);
         return request;
     }
     public static JSONObject playAccept(String opponent){
@@ -57,7 +56,7 @@ public class JSONRequests {
         request.put("gameID", gameID);
         return request;
     }
-    public static JSONObject logout(String msg){
+    public static JSONObject logout(){
         JSONObject request = new JSONObject();
         request.put("action", "logout");
         return request;

@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="container" stylesheets="@../styles/playersList.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.GamesListController">
    <center>
-      <TableView maxWidth="800.0" minHeight="378.0" minWidth="350.0" prefHeight="378.0" prefWidth="659.0" style="-fx-background-color: #ffffff53;" BorderPane.alignment="CENTER">
+      <TableView maxWidth="800.0" minHeight="378.0" minWidth="350.0" prefHeight="378.0" prefWidth="659.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn editable="false" prefWidth="75.0" text="Game ID" />
           <TableColumn editable="false" prefWidth="75.0" text="Opponent" />
@@ -48,7 +48,7 @@
    </top>
    <bottom>
        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="100.0" prefHeight="74.0" prefWidth="800.0">
-           <Button mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: transarent; -fx-border-color: #fff; -fx-border-width: 2; -fx-border-radius: 10;" styleClass="btn-play" text="Back" textFill="WHITE">
+           <Button mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="170.0" styleClass="btn-play" text="Back" textFill="WHITE">
                <font>
                    <Font size="18.0" />
                </font>
@@ -60,7 +60,7 @@
                    </DropShadow>
                </effect>
            </Button>
-         <Button mnemonicParsing="false" onAction="#replay" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: transarent; -fx-border-color: #fff; -fx-border-width: 2; -fx-border-radius: 10;" styleClass="btn-play" text="Replay" textFill="WHITE">
+         <Button mnemonicParsing="false" onAction="#replay" prefHeight="43.0" prefWidth="170.0" styleClass="btn-play" text="Replay" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font>

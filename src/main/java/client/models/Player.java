@@ -17,6 +17,8 @@ public class Player {
     public String username;
     public int points = 0;
     public Boolean online;
+    public static Player player = null;
+
     public String getUsername() {
         return username;
     }
@@ -32,17 +34,19 @@ public class Player {
             username =_username;
             points = _points;
     }
-    public static void getAll(){
+    public static void getOnlineList(){
         Server.sendRequest(JSONRequests.onlinePlayers().toString());
     }
 
     public static void login(String username,String password){
         Server.sendRequest(JSONRequests.login(username,password).toString());
     }
-    public static void sendGameRequest(String _username){
-        Server.sendRequest(JSONRequests.playRequest(_username).toString());
+    public static void logout(){
+        Server.sendRequest(JSONRequests.logout().toString());
     }
-    public static void acceptGameRequest(){
-        Server.sendRequest(JSONRequests.playAccept(Server.player.username).toString());
+
+    public static void register(String username,String password){
+        Server.sendRequest(JSONRequests.register(username,password).toString());
     }
+
 }
