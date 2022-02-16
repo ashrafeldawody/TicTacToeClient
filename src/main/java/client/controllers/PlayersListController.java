@@ -37,7 +37,7 @@ public class PlayersListController implements Initializable {
     private void invite(ActionEvent ae){
         App.setRoot("gameRequest");
         Player p = (Player) table.getSelectionModel().getSelectedItem();
-        Game.currentGame = new Game(p.username);
+        Game.currentGame = new Game(p);
         Game.currentGame.sendGameRequest();
     }
     @FXML

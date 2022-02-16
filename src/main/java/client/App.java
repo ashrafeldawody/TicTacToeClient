@@ -22,7 +22,7 @@ public class App extends Application {
     private double xOffset,yOffset;
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("LoginWindow"), Color.TRANSPARENT);
+        scene = new Scene(loadFXML("LoginWindow"),800,600, Color.TRANSPARENT);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.initStyle(StageStyle.TRANSPARENT);
         scene.setOnMousePressed(new EventHandler<MouseEvent>() {

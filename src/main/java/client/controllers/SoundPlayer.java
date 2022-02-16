@@ -9,7 +9,13 @@ public class SoundPlayer {
         GAME_START,
         GAME_VICTORY,
         GAME_DEFEAT,
+        GAME_DRAW,
         TICK,
+        PLAYER_JOINED,
+        PLAYER_ACTION_A,
+        PLAYER_ACTION_B,
+        LEVELING_UP
+
     }
     public SoundPlayer(SOUND type){
         Media media = new Media(getClass().getResource("/audio/" + getAudioSource(type) +".mp3").toExternalForm());
@@ -28,6 +34,16 @@ public class SoundPlayer {
                 return "victory";
             case GAME_DEFEAT:
                 return "defeat";
+            case PLAYER_JOINED:
+                return "playerjoined";
+            case PLAYER_ACTION_A:
+                return "playeractiona";
+            case PLAYER_ACTION_B:
+                return "playeractionb";
+            case LEVELING_UP:
+                return "levelingup";
+            case GAME_DRAW:
+                return "draw";
             default:
                 return "";
         }

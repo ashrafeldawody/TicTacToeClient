@@ -30,6 +30,7 @@ public class gameRequestAcceptController implements Initializable {
     @FXML
     public void accept(ActionEvent ae){
         Game.currentGame.acceptGameRequest();
+        Game.currentGame = null;
     }
     @FXML
     public void reject(ActionEvent ae){

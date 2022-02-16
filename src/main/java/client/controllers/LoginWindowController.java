@@ -53,8 +53,9 @@ public class LoginWindowController implements Initializable {
     private void switchRegister(ActionEvent ae) throws IOException {
         App.setRoot("RegisterWindow");
     }
+
     @FXML
-    private void close(MouseEvent ae){
+    private void close(MouseEvent ae) {
         Platform.exit();
     }
 }

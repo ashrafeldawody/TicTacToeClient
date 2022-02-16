@@ -23,6 +23,7 @@ import java.util.ArrayList;
 public class ResponseHandler {
     public static ArrayList<Player> playersList = new ArrayList<>();
     public static ArrayList<Player> gamesList = new ArrayList<>();
+
     public static void handleResponse(String response) {
         System.out.println(response + "\n");
         if (!isJSONValid(response) || response.isEmpty()) {
@@ -50,7 +51,7 @@ public class ResponseHandler {
                     handlePlayersList(response);
                     break;
                 case "player-connected":
-                    Helpers.displayTray("Player Connected",parsedResponse.getString("player") + " is connected", ToastTypes.LIST);
+                    Helpers.displayTray("Player Connected", parsedResponse.getString("player") + " is connected", ToastTypes.LIST);
                     break;
                 case "play-request":
                     handlePlayResponse(parsedResponse);
@@ -59,12 +60,33 @@ public class ResponseHandler {
                     handleGameStart(parsedResponse);
                     break;
                 case "play":
-                    if(GameWindowController.me != null && parsedResponse.getString("status").equalsIgnoreCase("success")){
-                        System.out.println(parsedResponse.toString());
-                        Platform.runLater(()->{
-                            GameWindowController.me.setMove(parsedResponse.getInt("index"),parsedResponse.getString("move"));
+                    if (GameWindowController.me != null && parsedResponse.getString("status").equalsIgnoreCase("success")) {
+                        Platform.runLater(() -> {
+                            GameWindowController.me.setMove(parsedResponse.getInt("index"), parsedResponse.getString("move"));
                         });
                     }
+                    break;
+                case "game-finish":
+                    String status = parsedResponse.getString("status");
+                    String axis = parsedResponse.getString("win-axis");
+
+                    if (status.equalsIgnoreCase("win")) {
+                        Platform.runLater(() -> {
+                            GameWindowController.me.handleWin(axis,true);
+                        });
+                    } else if(status.equalsIgnoreCase("lose")) {
+                        Platform.runLater(() -> {
+                            GameWindowController.me.handleWin(axis,false);
+                        });
+                    }else{
+                        Platform.runLater(() -> {
+                            GameWindowController.me.handleDraw();
+                        });
+                    }
+                    break;
+                case "message":
+                    System.out.println(parsedResponse);
+                    GameWindowController.me.messageRecieved(parsedResponse.getString("from"),parsedResponse.getString("message"));
                     break;
                 case "get-history":
 
@@ -77,24 +99,26 @@ public class ResponseHandler {
 
     private static void handleGameStart(JSONObject response) {
         String status = response.getString("status");
-        if (status.equals("success")){
-            String opponent = response.getString("opponent");
+        if (status.equals("success")) {
+            String opponentMove = response.getString("move");
+            Player.player.move = (opponentMove == "X" ? "O" : "X");
+            Player opponent = new Player(response.getString("opponent"), opponentMove);
             Game.currentGame = new Game(opponent);
             App.setRoot("GameWindow");
-        }else{
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "Couldn't Start Game",false);
+        } else {
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "Couldn't Start Game", false);
         }
 
     }
 
     private static void handlePlayResponse(JSONObject response) {
         String status = response.getString("status");
-        if (status.equals("success")){
+        if (status.equals("success")) {
             String opponent = response.getString("opponent");
-            Game.currentGame = new Game(opponent);
+            Game.currentGame = new Game(new Player(opponent, ""));
             App.setRoot("gameRequestAccept");
-        }else{
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", response.getString("opponent"),false);
+        } else {
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", response.getString("opponent"), false);
         }
     }
 
@@ -113,28 +137,29 @@ public class ResponseHandler {
 
     private static void handleLoginResponse(JSONObject response) {
         String status = response.getString("status");
-        if (status.equals("success")){
+        if (status.equals("success")) {
             JSONObject player = response.getJSONObject("player");
             Player.player = new Player(player.getString("username"), player.getInt("points"));
             App.setRoot("PlayerHome");
-        }else{
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username or password is incorrect",false);
-        }
-    }
-    private static void handleRegisterResponse(JSONObject response) {
-        String status = response.getString("status");
-        if (status.equals("success")){
-            App.setRoot("LoginWindow");
-        }else{
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username already exist",false);
+        } else {
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username or password is incorrect", false);
         }
     }
 
-    private static void handlePlayersList(String resp){
+    private static void handleRegisterResponse(JSONObject response) {
+        String status = response.getString("status");
+        if (status.equals("success")) {
+            App.setRoot("LoginWindow");
+        } else {
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username already exist", false);
+        }
+    }
+
+    private static void handlePlayersList(String resp) {
         playersList.clear();
         JSONObject JsonObj = new JSONObject(resp);
-        for(Object object: JsonObj.getJSONArray("players")){
-            playersList.add(new Player(((JSONObject)object).getString("username"),((JSONObject)object).getInt("points")));
+        for (Object object : JsonObj.getJSONArray("players")) {
+            playersList.add(new Player(((JSONObject) object).getString("username"), ((JSONObject) object).getInt("points")));
         }
     }
 }

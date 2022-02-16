@@ -17,6 +17,7 @@ public class Player {
     public String username;
     public int points = 0;
     public Boolean online;
+    public String move;
     public static Player player = null;
 
     public String getUsername() {
@@ -31,8 +32,12 @@ public class Player {
     }
 
     public Player(String _username, int _points){
-            username =_username;
-            points = _points;
+        username =_username;
+        points = _points;
+    }
+    public Player(String _username, String _move){
+        username =_username;
+        move = _move;
     }
     public static void getOnlineList(){
         Server.sendRequest(JSONRequests.onlinePlayers().toString());

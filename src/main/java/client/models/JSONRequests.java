@@ -44,9 +44,9 @@ public class JSONRequests {
         request.put("action", "get-history");
         return request;
     }
-    public static JSONObject gameHistory(String msg){
+    public static JSONObject messageSend(String msg){
         JSONObject request = new JSONObject();
-        request.put("action", "message");
+        request.put("action", "send-message");
         request.put("message", msg);
         return request;
     }
