@@ -5,7 +5,7 @@
 package client.models;
 
 import client.App;
-import client.controllers.GameWindowController;
+import client.controllers.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import org.json.JSONArray;
@@ -21,13 +21,14 @@ import java.util.ArrayList;
  * @author ashra
  */
 public class ResponseHandler {
+    public static String tempOpponentUsername;
     public static ArrayList<Player> playersList = new ArrayList<>();
     public static ArrayList<Player> gamesList = new ArrayList<>();
 
     public static void handleResponse(String response) {
         System.out.println(response + "\n");
         if (!isJSONValid(response) || response.isEmpty()) {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "Server Sent Unexpected Response", false);
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Server Sent Unexpected Response", false);
             return;
         }
         JSONObject parsedResponse = new JSONObject(response);
@@ -56,36 +57,35 @@ public class ResponseHandler {
                 case "play-request":
                     handlePlayResponse(parsedResponse);
                     break;
+                case "game-reject":
+                    if(Game.currentGame != null){
+                        Game.currentGame = null;
+                    }
+                    Helpers.showDialog(Alert.AlertType.INFORMATION,"Canceled","Player Request Has been canceled",false);
+
+                    App.setRoot("PlayerHome");
+                    break;
                 case "game-start":
                     handleGameStart(parsedResponse);
                     break;
                 case "play":
                     if (GameWindowController.me != null && parsedResponse.getString("status").equalsIgnoreCase("success")) {
+                        Game.currentGame.turn = parsedResponse.getString("turn");
                         Platform.runLater(() -> {
                             GameWindowController.me.setMove(parsedResponse.getInt("index"), parsedResponse.getString("move"));
                         });
+                    }else{
+                        Helpers.showDialog(Alert.AlertType.ERROR, "Failed",  parsedResponse.getString("message"), false);
                     }
                     break;
                 case "game-finish":
                     String status = parsedResponse.getString("status");
                     String axis = parsedResponse.getString("win-axis");
-
-                    if (status.equalsIgnoreCase("win")) {
-                        Platform.runLater(() -> {
-                            GameWindowController.me.handleWin(axis,true);
-                        });
-                    } else if(status.equalsIgnoreCase("lose")) {
-                        Platform.runLater(() -> {
-                            GameWindowController.me.handleWin(axis,false);
-                        });
-                    }else{
-                        Platform.runLater(() -> {
-                            GameWindowController.me.handleDraw();
-                        });
-                    }
+                    Platform.runLater(()->{
+                        GameWindowController.me.handleResult(axis,status);
+                    });
                     break;
                 case "message":
-                    System.out.println(parsedResponse);
                     GameWindowController.me.messageRecieved(parsedResponse.getString("from"),parsedResponse.getString("message"));
                     break;
                 case "get-history":
@@ -100,25 +100,29 @@ public class ResponseHandler {
     private static void handleGameStart(JSONObject response) {
         String status = response.getString("status");
         if (status.equals("success")) {
-            String opponentMove = response.getString("move");
-            Player.player.move = (opponentMove == "X" ? "O" : "X");
-            Player opponent = new Player(response.getString("opponent"), opponentMove);
+            String myMove = response.getString("move");
+            //if i'm playing o then the other player must be x...
+            Player opponent = new Player(response.getString("opponent"), (myMove.equalsIgnoreCase("X") ? "O" : "X"));
             Game.currentGame = new Game(opponent);
-            App.setRoot("GameWindow");
+            Game.currentGame.turn = response.getString("turn");
+            Game.currentGame.me.move = myMove;
+            Platform.runLater(()->{
+                App.setRoot("GameWindow");
+            });
         } else {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "Couldn't Start Game", false);
+            Helpers.showDialog(Alert.AlertType.ERROR,  "Failed", "Couldn't Start Game", false);
         }
 
     }
 
+
     private static void handlePlayResponse(JSONObject response) {
         String status = response.getString("status");
         if (status.equals("success")) {
-            String opponent = response.getString("opponent");
-            Game.currentGame = new Game(new Player(opponent, ""));
+            tempOpponentUsername = response.getString("opponent");
             App.setRoot("gameRequestAccept");
         } else {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", response.getString("opponent"), false);
+            Helpers.showDialog(Alert.AlertType.ERROR,  "Failed", response.getString("opponent"), false);
         }
     }
 
@@ -142,7 +146,7 @@ public class ResponseHandler {
             Player.player = new Player(player.getString("username"), player.getInt("points"));
             App.setRoot("PlayerHome");
         } else {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username or password is incorrect", false);
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", response.getString("message"), false);
         }
     }
 
@@ -151,7 +155,7 @@ public class ResponseHandler {
         if (status.equals("success")) {
             App.setRoot("LoginWindow");
         } else {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Failed", "The username already exist", false);
+            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "The username already exist", false);
         }
     }
 

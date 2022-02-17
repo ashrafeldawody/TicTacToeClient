@@ -14,21 +14,31 @@ import java.util.Date;
 public class Game {
     public static Game currentGame;
     public int id;
-    public Player player1;
-    public Player player2;
+    public Player me;
+    public Player opponent;
     public Player lastPlayed;
+    public String turn;
     public Date date;
 
     public Game(int _id, Player p1, Player p2, Date d) {
         id = _id;
-        player1 = p1;
-        player2 = p2;
+        me = p1;
+        opponent = p2;
         date = d;
     }
 
     public Game(Player p2) {
-        player1 = Player.player;
-        player2 = p2;
+        me = Player.player;
+        opponent = p2;
+    }
+
+    public static void rejectGameRequest() {
+        Server.sendRequest(JSONRequests.playReject().toString());
+    }
+
+    public static void endCurrentGame() {
+        if (Game.currentGame != null) Game.currentGame = null;
+        ResponseHandler.tempOpponentUsername = null;
     }
 
     public void startGame() {
@@ -36,11 +46,11 @@ public class Game {
     }
 
     public void sendGameRequest() {
-        Server.sendRequest(JSONRequests.playRequest(player2.username).toString());
+        Server.sendRequest(JSONRequests.playRequest(opponent.username).toString());
     }
 
-    public void acceptGameRequest() {
-        Server.sendRequest(JSONRequests.playAccept(player2.username).toString());
+    public static void acceptGameRequest() {
+        Server.sendRequest(JSONRequests.playAccept().toString());
     }
 
     public void play(int index) {
@@ -49,5 +59,13 @@ public class Game {
 
     public void sendMessage(String message) {
         Server.sendRequest(JSONRequests.messageSend(message).toString());
+    }
+
+    public Boolean isMyTurn() {
+
+        if (me.move.equalsIgnoreCase(turn)) {
+            return false;
+        }
+        return true;
     }
 }

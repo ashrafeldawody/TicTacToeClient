@@ -2,11 +2,13 @@ package client.controllers;
 
 import client.App;
 import client.models.Game;
+import client.models.Helpers;
 import client.models.Player;
 import client.models.ResponseHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,8 +37,13 @@ public class PlayersListController implements Initializable {
     }
     @FXML
     private void invite(ActionEvent ae){
+        if(table.getSelectionModel().isEmpty()){
+            Helpers.showDialog(Alert.AlertType.ERROR,  "Failed", "No Player Seleted", false);
+            return;
+        }
         App.setRoot("gameRequest");
         Player p = (Player) table.getSelectionModel().getSelectedItem();
+        ResponseHandler.tempOpponentUsername = p.username;
         Game.currentGame = new Game(p);
         Game.currentGame.sendGameRequest();
     }

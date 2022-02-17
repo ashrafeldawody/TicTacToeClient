@@ -7,77 +7,24 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane styleClass="container" stylesheets="@../styles/gameRequest.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.gameRequestController">
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="container" stylesheets="@../styles/gameRequest.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.gameRequestController">
    <children>
-      <BorderPane layoutY="7.0" prefHeight="506.0" prefWidth="878.0" styleClass="innerContainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefWidth="250.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="550.0" prefWidth="312.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="237.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="player1Label" text="Player 1" textFill="WHITE">
+                  <Label fx:id="statusLabel" text="Game Invitation Sent" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
-               </children>
-            </FlowPane>
-         </left>
-         <center>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="311.0" prefWidth="218.0" vgap="15.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fx:id="loadingImg" fitHeight="96.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/loading.gif" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="statusLabel" text="Waiting for Player" textFill="WHITE">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                     <FlowPane.margin>
-                        <Insets top="10.0" />
-                     </FlowPane.margin>
-                  </Label>
-                  <Button fx:id="tryAgainBtn" disable="true" minWidth="200.0" mnemonicParsing="false" onAction="#tryAgain" onMouseEntered="#mouseEntered" styleClass="btn-play" text="Try Again" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color red="0.7490196228027344" green="0.6431372761726379" blue="0.6431372761726379" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
-                  <Button fx:id="cencelBtn" minWidth="200.0" mnemonicParsing="false" onAction="#cancel" onMouseEntered="#mouseEntered" styleClass="btn-play" text="Cancel" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color red="0.7490196228027344" green="0.6431372761726379" blue="0.6431372761726379" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
-               </children>
-            </FlowPane>
-         </center>
-         <right>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefWidth="250.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="232.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="153.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image>
@@ -87,10 +34,32 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="loadingImg" fitHeight="96.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/loading.gif" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="statusLabel1" text="Waiting for Player" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cencelBtn" minWidth="200.0" mnemonicParsing="false" onAction="#cancel" onMouseEntered="#mouseEntered" prefHeight="43.0" prefWidth="265.0" styleClass="btn-play" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7490196228027344" green="0.6431372761726379" blue="0.6431372761726379" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
                </children>
-            </FlowPane>
-         </right>
-      </BorderPane>
+            </VBox>
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />

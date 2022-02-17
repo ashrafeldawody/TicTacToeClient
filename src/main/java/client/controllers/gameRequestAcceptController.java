@@ -29,12 +29,11 @@ public class gameRequestAcceptController implements Initializable {
     }
     @FXML
     public void accept(ActionEvent ae){
-        Game.currentGame.acceptGameRequest();
-        Game.currentGame = null;
+        Game.acceptGameRequest();
     }
     @FXML
     public void reject(ActionEvent ae){
-        Game.currentGame = null;
+        Game.rejectGameRequest();
         App.setRoot("PlayerHome");
     }
     @FXML

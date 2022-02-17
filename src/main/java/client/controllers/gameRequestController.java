@@ -1,6 +1,7 @@
 package client.controllers;
 
 import client.App;
+import client.models.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,6 +38,8 @@ public class gameRequestController implements Initializable {
     }
     @FXML
     private void cancel(ActionEvent ae) throws IOException {
+        Game.rejectGameRequest();
+        if(Game.currentGame != null) Game.currentGame = null;
         App.setRoot("PlayerHome");
     }
     @FXML

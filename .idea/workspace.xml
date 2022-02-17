@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="086b4a8a-f1f4-4eaa-ace6-a19f68c0549a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/controllers/GameWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/controllers/GameWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/controllers/PlayersListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/controllers/PlayersListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/controllers/RegisterWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/controllers/RegisterWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/controllers/gameRequestAcceptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/controllers/gameRequestAcceptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/controllers/gameRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/controllers/gameRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/JSONRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/JSONRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/models/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/models/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/GameWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/GameWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/gameRequest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gameRequest.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/gameRequestAccept.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gameRequestAccept.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/PlayerHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/PlayerHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/gameRequest.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/gameRequest.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/defeat.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/gamestart.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/levelingup.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/levelreached.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/playeractiona.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/playeractionb.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/playerjoined.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/reward1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/tick.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/audio/victory.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/App$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/App$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/AppLauncher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/GameWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/GamesListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/LoginWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/PlayerHomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/PlayerWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/PlayersListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/RegisterWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/SoundPlayer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/SoundPlayer$SOUND.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/SoundPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/gameRequestAcceptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/controllers/gameRequestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/Helpers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/JSONRequests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/ResponseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/models/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/GameWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/LoginWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/PlayerHome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/PlayersList.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/RegisterWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/gameList.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/gameRequest.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/gameRequestAccept.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/global.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/loser.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/won.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/PlayerHome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/RegisterForm.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/gameRequest.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/gameWindow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/general.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/primary.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tictactoe-1.0-SNAPSHOT-shaded.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tictactoe-1.0-SNAPSHOT.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="25E82zoqoh9tgJ9s872ZgONjsmy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TEST" />
+  </component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.AppLauncher" />
+      <module name="tictactoe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tictactoe [package,javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.AppLauncher" />
+      <item itemvalue="Maven.tictactoe [package,javafx:run]" />
+      <item itemvalue="Application.Game" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.AppLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="086b4a8a-f1f4-4eaa-ace6-a19f68c0549a" name="Changes" comment="" />
+      <created>1645080681958</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645080681958</updated>
+      <workItem from="1645080684072" duration="25302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

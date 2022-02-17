@@ -28,7 +28,7 @@ public abstract class Server {
             outputStream = new PrintStream(socket.getOutputStream());
 
         } catch (IOException e) {
-            Helpers.showDialog(Alert.AlertType.ERROR, "Failed", "Error", "Failed to connect to server", true);
+            Helpers.showDialog(Alert.AlertType.ERROR, "Error", "Failed to connect to server", true);
         }
         startListening();
     }

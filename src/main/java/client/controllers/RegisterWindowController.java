@@ -43,15 +43,15 @@ public class RegisterWindowController implements Initializable {
     @FXML
     private void register(ActionEvent ae){
         if(!passwordField.getText().equals(passwordConfirmField.getText())){
-            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Failed","Password Confirmation doesn't match",false);
+            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Password Confirmation doesn't match",false);
             return;
         }
         if(passwordField.getText().length() < 4){
-            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Failed","Password is too short",false);
+            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Password is too short",false);
             return;
         }
         if(usernameField.getText().length() < 4){
-            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Failed","Username is too short",false);
+            Helpers.showDialog(Alert.AlertType.ERROR,"Failed","Username is too short",false);
             return;
         }
         Player.register(usernameField.getText(),passwordField.getText());

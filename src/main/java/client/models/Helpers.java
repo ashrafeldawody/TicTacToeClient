@@ -22,11 +22,11 @@ import org.pomo.toasterfx.model.impl.ToastTypes;
  * @author ashra
  */
 public class Helpers {
-    public static void showDialog(Alert.AlertType type,String title,String header,String content,Boolean exit){
+    public static void showDialog(Alert.AlertType type,String title,String content,Boolean exit){
         Platform.runLater(()->{
             Alert a = new Alert(type);
             a.setTitle(title);
-            a.setHeaderText(header);
+            a.setHeaderText(title);
             a.setResizable(true);
             a.setContentText(content);
             a.showAndWait();

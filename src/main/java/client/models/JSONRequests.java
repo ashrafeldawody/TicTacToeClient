@@ -27,10 +27,16 @@ public class JSONRequests {
         request.put("opponent", opponent);
         return request;
     }
-    public static JSONObject playAccept(String opponent){
+    public static JSONObject playAccept(){
         JSONObject request = new JSONObject();
         request.put("action", "play-accept");
-        request.put("opponent", opponent);
+        request.put("opponent", ResponseHandler.tempOpponentUsername);
+        return request;
+    }
+    public static JSONObject playReject(){
+        JSONObject request = new JSONObject();
+        request.put("action", "play-reject");
+        request.put("opponent", ResponseHandler.tempOpponentUsername);
         return request;
     }
     public static JSONObject play(int index){
