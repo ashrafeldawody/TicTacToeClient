@@ -4,9 +4,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,13 +18,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainPane" fx:id="rootAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.GameWindowController">
+<AnchorPane id="mainPane" fx:id="rootAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.GameReplayWindowController">
     <children>
       <Pane layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="800.0" styleClass="innerContainer" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
-            <VBox layoutX="28.0" layoutY="14.0">
+            <VBox alignment="CENTER" layoutX="28.0" layoutY="14.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="366.0" prefWidth="626.0" spacing="20.0">
+                  <HBox alignment="CENTER" prefHeight="442.0" prefWidth="702.0" spacing="20.0">
                      <children>
                         <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="418.0" prefWidth="172.0">
                            <children>
@@ -59,10 +58,13 @@
                            <children>
                               <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="180.0" prefHeight="62.0" prefWidth="122.0" prefWrapLength="0.0">
                                  <children>
-                                    <Label fx:id="headerLabel" textFill="#00ff2f">
+                                    <Label fx:id="headerLabel" alignment="CENTER" text="GAME REPLAY" textAlignment="CENTER" textFill="#73ff0f">
                                        <font>
                                           <Font size="31.0" />
                                        </font>
+                                       <effect>
+                                          <Glow level="1.0" />
+                                       </effect>
                                     </Label>
                                  </children>
                               </FlowPane>
@@ -81,7 +83,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>
                                  <children>
-                                    <Button fx:id="field1" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field1" disable="true" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -89,7 +91,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field2" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field2" disable="true" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -97,7 +99,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field3" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field3" disable="true" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -105,7 +107,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field4" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -113,7 +115,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field5" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -124,7 +126,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field6" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field6" disable="true" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -132,7 +134,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field7" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#mouseEntered" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -140,7 +142,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field8" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field8" alignment="CENTER" contentDisplay="CENTER" disable="true" focusTraversable="false" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -148,7 +150,7 @@
                                           <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                        </padding>
                                     </Button>
-                                    <Button fx:id="field9" mnemonicParsing="false" onAction="#selectField" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                    <Button fx:id="field9" disable="true" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="150.0" prefWidth="150.0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="49.0" />
                                        </font>
@@ -196,32 +198,14 @@
                         </FlowPane>
                      </children>
                   </HBox>
-                  <FlowPane fx:id="chatPane" alignment="BOTTOM_CENTER" columnHalignment="CENTER" hgap="60.0" orientation="VERTICAL" prefHeight="188.0" prefWidth="701.0" vgap="20.0">
+                  <FlowPane fx:id="chatPane" alignment="BOTTOM_CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="46.0" prefWidth="702.0">
                      <children>
-                        <VBox prefHeight="147.0" prefWidth="407.0" spacing="20.0">
+                        <VBox fx:id="finalButtonsPane" alignment="CENTER" prefHeight="101.0" prefWidth="218.0" spacing="20.0">
                            <children>
-                              <TextArea fx:id="chatBox" disable="true" editable="false" prefHeight="97.0" prefWidth="226.0" promptText="Chat With Your Opponent" />
-                              <HBox spacing="10.0">
-                                 <children>
-                                    <TextField fx:id="chatTextField" prefHeight="26.0" prefWidth="324.0" promptText="Your Message" />
-                                    <Button fx:id="sendMessagebtn" defaultButton="true" mnemonicParsing="false" onAction="#sendMessage" prefHeight="30.0" prefWidth="63.0" text="Send" textFill="WHITE" />
-                                 </children>
-                              </HBox>
-                           </children>
-                           <FlowPane.margin>
-                              <Insets />
-                           </FlowPane.margin>
-                        </VBox>
-                        <VBox fx:id="finalButtonsPane" alignment="CENTER" prefHeight="146.0" prefWidth="217.0" spacing="20.0">
-                           <children>
-                              <Button fx:id="playAgainbtn" disable="true" mnemonicParsing="false" onAction="#playAgain" prefHeight="66.0" prefWidth="200.0" text="Play Again" textFill="WHITE" />
-                              <Button fx:id="backbtn" disable="true" mnemonicParsing="false" onAction="#back" prefHeight="66.0" prefWidth="200.0" text="Back" textFill="WHITE" />
+                              <Button fx:id="backbtn" cancelButton="true" mnemonicParsing="false" onAction="#back" prefHeight="66.0" prefWidth="200.0" text="Back" textFill="WHITE" />
                            </children>
                         </VBox>
                      </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                   </FlowPane>
                </children>
             </VBox>

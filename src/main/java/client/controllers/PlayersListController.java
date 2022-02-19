@@ -35,6 +35,7 @@ public class PlayersListController implements Initializable {
     private void back(ActionEvent ae) throws IOException {
         App.setRoot("PlayerHome");
     }
+
     @FXML
     private void invite(ActionEvent ae){
         if(table.getSelectionModel().isEmpty()){

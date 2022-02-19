@@ -27,10 +27,17 @@ public class JSONRequests {
         request.put("opponent", opponent);
         return request;
     }
-    public static JSONObject playAccept(){
+    public static JSONObject playAccept(String record){
         JSONObject request = new JSONObject();
         request.put("action", "play-accept");
+        request.put("record", record);
         request.put("opponent", ResponseHandler.tempOpponentUsername);
+        return request;
+    }
+    public static JSONObject playSoloGame(String record){
+        JSONObject request = new JSONObject();
+        request.put("action", "single-game");
+        request.put("record", record);
         return request;
     }
     public static JSONObject playReject(){
@@ -56,10 +63,10 @@ public class JSONRequests {
         request.put("message", msg);
         return request;
     }
-    public static JSONObject replay(int gameID){
+    public static JSONObject replay(){
         JSONObject request = new JSONObject();
         request.put("action", "replay");
-        request.put("gameID", gameID);
+        request.put("id", RecordedGame.current.id);
         return request;
     }
     public static JSONObject logout(){

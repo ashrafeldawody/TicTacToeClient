@@ -12,7 +12,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="container" stylesheets="@../styles/gameRequest.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.gameRequestController">
    <children>
       <HBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -29,7 +28,7 @@
                         <Image url="@../images/logo.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="player2Label" text="Player 2" textFill="WHITE">
+                  <Label fx:id="opponentLabel" text="Player 2" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>

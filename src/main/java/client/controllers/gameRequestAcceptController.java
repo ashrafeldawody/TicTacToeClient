@@ -3,6 +3,7 @@ package client.controllers;
 import client.App;
 import client.models.Game;
 import client.models.Player;
+import client.models.ResponseHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,7 +26,7 @@ public class gameRequestAcceptController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        playerLabel.setText(ResponseHandler.tempOpponentUsername);
     }
     @FXML
     public void accept(ActionEvent ae){

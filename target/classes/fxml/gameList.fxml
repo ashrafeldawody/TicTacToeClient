@@ -3,7 +3,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,12 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="container" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.GamesListController">
    <center>
-      <TableView maxWidth="800.0" minHeight="378.0" minWidth="350.0" prefHeight="378.0" prefWidth="659.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn editable="false" prefWidth="75.0" text="Game ID" />
-          <TableColumn editable="false" prefWidth="75.0" text="Opponent" />
-            <TableColumn editable="false" prefWidth="232.80000610351567" text="Time" />
-        </columns>
+      <TableView id="table" fx:id="table" maxWidth="800.0" minHeight="378.0" minWidth="350.0" prefHeight="378.0" prefWidth="659.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </BorderPane.margin>

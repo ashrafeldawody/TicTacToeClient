@@ -61,7 +61,7 @@
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <FontAwesomeIconView fill="#345f94" glyphName="USER" size="25" text="" />
-                  <TextField fx:id="usernameField" prefHeight="42.0" prefWidth="280.0" promptText="UserName" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" text="ashraf" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="usernameField" prefHeight="42.0" prefWidth="280.0" promptText="UserName" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -81,7 +81,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <PasswordField fx:id="passwordField" prefHeight="42.0" prefWidth="280.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" text="9197" HBox.hgrow="ALWAYS">
+                  <PasswordField fx:id="passwordField" prefHeight="42.0" prefWidth="280.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #6587b3; -fx-border-width: 0px 0px 2px 0px;" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="15.0" />
                      </font>

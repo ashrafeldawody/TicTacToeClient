@@ -39,7 +39,7 @@ public class Player {
         username =_username;
         move = _move;
     }
-    public static synchronized void getOnlineList(){
+    public static void getOnlineList(){
         Server.sendRequest(JSONRequests.onlinePlayers().toString());
     }
 

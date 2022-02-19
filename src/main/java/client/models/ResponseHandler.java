@@ -54,6 +54,12 @@ public class ResponseHandler {
                 case "player-connected":
                     Helpers.displayTray("Player Connected", parsedResponse.getString("player") + " is connected", ToastTypes.LIST);
                     break;
+                case "play-single-start":
+                    handleGameStart(parsedResponse);
+                    Platform.runLater(()->{
+                        App.setRoot("GameWindow");
+                    });
+                    break;
                 case "play-request":
                     handlePlayResponse(parsedResponse);
                     break;
@@ -62,8 +68,9 @@ public class ResponseHandler {
                         Game.currentGame = null;
                     }
                     Helpers.showDialog(Alert.AlertType.INFORMATION,"Canceled","Player Request Has been canceled",false);
-
-                    App.setRoot("PlayerHome");
+                    Platform.runLater(()->{
+                        App.setRoot("PlayerHome");
+                    });
                     break;
                 case "game-start":
                     handleGameStart(parsedResponse);
@@ -80,18 +87,32 @@ public class ResponseHandler {
                     break;
                 case "game-finish":
                     String status = parsedResponse.getString("status");
-                    String axis = parsedResponse.getString("win-axis");
+                    String axis = parsedResponse.getString("axis");
                     Platform.runLater(()->{
                         GameWindowController.me.handleResult(axis,status);
                     });
                     break;
                 case "message":
-                    GameWindowController.me.messageRecieved(parsedResponse.getString("from"),parsedResponse.getString("message"));
+                    Platform.runLater(()->{
+                        GameWindowController.me.messageRecieved(parsedResponse.getString("from"),parsedResponse.getString("message"));
+                    });
                     break;
-                case "get-history":
-
+                case "game-history":
+                    RecordedGame.parseMyHistory(parsedResponse);
+                    Platform.runLater(()->{
+                        App.setRoot("gameList");
+                    });
                     break;
                 case "replay":
+                    Platform.runLater(() -> {
+                        GameReplayWindowController.me.setMove(parsedResponse.getInt("index"), parsedResponse.getString("move"));
+                    });
+                    break;
+                case "replay-finish":
+                    Platform.runLater(()->{
+                        String winner = parsedResponse.isNull("winner")? "Computer" : parsedResponse.getString("winner");
+                        GameReplayWindowController.me.handleResult(parsedResponse.getString("axis"),winner);
+                    });
                     break;
             }
         }

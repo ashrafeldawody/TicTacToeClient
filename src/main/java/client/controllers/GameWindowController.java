@@ -5,14 +5,11 @@
 package client.controllers;
 
 import client.App;
-import client.models.Game;
-import client.models.Helpers;
-import client.models.Player;
+import client.models.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import client.models.ResponseHandler;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,20 +69,14 @@ public class GameWindowController implements Initializable {
     @FXML
     private Label headerLabel;
     @FXML
-    private FontAwesomeIconView arrowToMe;
-    @FXML
-    private FontAwesomeIconView arrowToOpponent;
-    @FXML
     private TextArea chatBox;
     @FXML
     private TextField chatTextField;
-    @FXML
-    private VBox finalButtonsPane;
 
     public void initialize(URL url, ResourceBundle rb) {
         me = this;
         refreshTurn();
-        setTurn();
+        refreshHeader();
         myUsername.setText(Game.currentGame.me.username);
         myMove.setText(Game.currentGame.me.move);
 
@@ -101,7 +92,7 @@ public class GameWindowController implements Initializable {
             opponentMove.setTextFill(Color.GREEN);
         }
     }
-    public void setTurn(){
+    public void refreshHeader(){
         headerLabel.setVisible(true);
         if(Game.currentGame.isMyTurn()){
             headerLabel.setTextFill(Color.GREEN);
@@ -113,7 +104,7 @@ public class GameWindowController implements Initializable {
     }
     public void setMove(int index, String move) {
         refreshTurn();
-        setTurn();
+        refreshHeader();
         new SoundPlayer(SoundPlayer.SOUND.PLAYER_ACTION_A).play();
         switch (index) {
             case 0:
@@ -177,9 +168,25 @@ public class GameWindowController implements Initializable {
 
     @FXML
     private void playAgain(ActionEvent ae) {
-        Game.currentGame = new Game(Game.currentGame.opponent);
-        Game.currentGame.sendGameRequest();
         App.setRoot("gameRequest");
+        if(!Game.currentGame.opponent.username.equalsIgnoreCase("BOT")){
+            Game.currentGame = new Game(Game.currentGame.opponent);
+            Game.currentGame.sendGameRequest();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Record ?");
+            alert.setContentText("Do you want to record this game?");
+            ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+            ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
+            alert.getButtonTypes().setAll(okButton, noButton);
+            alert.showAndWait().ifPresent(type -> {
+                if (type == okButton) {
+                    Server.sendRequest(JSONRequests.playSoloGame("yes").toString());
+                } else {
+                    Server.sendRequest(JSONRequests.playSoloGame("no").toString());
+                }
+            });
+        }
     }
 
     @FXML
@@ -190,7 +197,7 @@ public class GameWindowController implements Initializable {
 
 
     public void handleResult(String axis, String result) {
-
+        GameOver = true;
         playAgainbtn.setDisable(false);
         chatTextField.setDisable(true);
         gameGrid.setDisable(true);
@@ -201,17 +208,22 @@ public class GameWindowController implements Initializable {
             color = Color.GREEN;
             new SoundPlayer(SoundPlayer.SOUND.GAME_VICTORY).play();
             headerText = "You Won!";
+            highlightAxis(axis,Color.GREEN);
         } else if(result.equalsIgnoreCase("lose")) {
             color = Color.RED;
             new SoundPlayer(SoundPlayer.SOUND.GAME_DEFEAT).play();
             headerText = "You Lost";
+            highlightAxis(axis,Color.RED);
         }else{
             new SoundPlayer(SoundPlayer.SOUND.GAME_DRAW).play();
         }
         headerLabel.setTextFill(color);
         headerLabel.setText(headerText);
         headerLabel.setVisible(true);
-
+        backbtn.setDisable(false);
+    }
+    private void highlightAxis(String axis,Paint color){
+    
         switch (axis) {
             case "012":
                 field1.setTextFill(color);
@@ -262,8 +274,8 @@ public class GameWindowController implements Initializable {
                 break;
         }
     }
-
     public void messageRecieved(String sender, String message) {
+        System.out.println(message);
         chatBox.appendText(sender + ": " + message + "\n");
     }
 }

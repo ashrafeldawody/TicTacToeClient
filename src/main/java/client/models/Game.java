@@ -5,7 +5,12 @@
 package client.models;
 
 import client.App;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -16,9 +21,9 @@ public class Game {
     public int id;
     public Player me;
     public Player opponent;
-    public Player lastPlayed;
     public String turn;
     public Date date;
+
 
     public Game(int _id, Player p1, Player p2, Date d) {
         id = _id;
@@ -50,7 +55,20 @@ public class Game {
     }
 
     public static void acceptGameRequest() {
-        Server.sendRequest(JSONRequests.playAccept().toString());
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Record ?");
+        alert.setContentText("Do you want to record this game?");
+        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+        ButtonType noButton = new ButtonType("no", ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(okButton, noButton);
+        alert.showAndWait().ifPresent(type -> {
+            if (type == okButton) {
+                Server.sendRequest(JSONRequests.playAccept("yes").toString());
+            } else {
+                Server.sendRequest(JSONRequests.playAccept("no").toString());
+            }
+        });
+
     }
 
     public void play(int index) {
@@ -64,8 +82,8 @@ public class Game {
     public Boolean isMyTurn() {
 
         if (me.move.equalsIgnoreCase(turn)) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }

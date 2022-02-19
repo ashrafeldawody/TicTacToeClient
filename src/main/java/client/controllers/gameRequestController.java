@@ -2,6 +2,8 @@ package client.controllers;
 
 import client.App;
 import client.models.Game;
+import client.models.Player;
+import client.models.ResponseHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,9 +18,7 @@ import java.util.ResourceBundle;
 
 public class gameRequestController implements Initializable {
     @FXML
-    private Label player1Label;
-    @FXML
-    private Label player2Label;
+    private Label opponentLabel;
     @FXML
     private Label statusLabel;
     @FXML
@@ -30,7 +30,7 @@ public class gameRequestController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        opponentLabel.setText(ResponseHandler.tempOpponentUsername);
     }
     @FXML
     private void tryAgain(ActionEvent ae){
